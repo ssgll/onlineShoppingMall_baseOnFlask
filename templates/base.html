@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    {% block css %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    {% endblock %}
+    {% block title %}
+
+    {% endblock %}
+
+    <style>
+        .nav{
+            background-color: rgba(85,89,88,0.89);
+        }
+        p{
+            font-family: "Ubuntu";
+            color: #ffffff;
+        }
+    </style>
+
+</head>
+<body>
+{% block nav %}
+    <div class="container nav">
+        <div class="col-md-1">
+            <a  href="{{ url_for("indexBlueprint.index") }}">
+                <button class="btn btn-primary btn-lg">
+                    <span class="glyphicon glyphicon-home"></span>
+                    首页
+                </button>
+            </a>
+
+        </div>
+        <div class="col-md-1 " style="margin-left: 20px">
+            <button class="btn btn-primary btn-lg">
+                <span class="glyphicon glyphicon-shopping-cart"></span>
+                购物车
+            </button>
+        </div>
+        {% block login %}
+            {# 登录注册   #}
+        {% endblock %}
+
+
+    </div>
+{% endblock %}
+
+{% block search %}{% endblock %}
+{% block register %}{% endblock %}
+{% block usermanager %}{% endblock %}
+</body>
+</html>
+
+{% block js %}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+{% endblock %}

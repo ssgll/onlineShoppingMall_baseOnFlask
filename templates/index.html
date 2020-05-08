@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}
+<title>主页</title>
+{% endblock %}
+{% block search %}
+    <div class="col-lg-6 col-md-offset-3" style="margin-top: 40px">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="搜索商品">
+            <span class="input-group-btn">
+        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+      </span>
+        </div>
+    </div>
+{% endblock %}
+{% block login %}
+    {% if username %}
+        <div class="left dropdown col-md-2 col-md-offset-7" style="margin-left: 750px">
+            <button class="btn btn-lg dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                {{ username }}
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">购物车</a></li>
+                <li><a href="{{ url_for('authBlueprint.usermanager') }}">个人信息管理</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="{{ url_for('indexBlueprint.logout') }}">注销</a></li>
+            </ul>
+        </div>
+    {% else %}
+        <div class="left col-md-1 col-md-offset-6">
+            <button class="btn btn-primary btn-lg" id="loginButton" data-toggle="modal" data-target="#loginModal">
+                登录
+            </button>
+            <div class="modal fade" id="loginModal" aria-labelledby="loginModalLabel" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="close" data-dismiss="modal" aria-label="Close" type="button">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 class="modal-title">登录</h4>
+                        </div>
+                        <div class="modal-body">
+                            <!--登录-->
+                            <form action="" enctype="multipart/form-data" method="post">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">用户名</label>
+                                    <input name="username" type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">密码</label>
+                                    <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    {% if error %}
+                                    <input type="text" class="form-control" placeholder="{{ error }}" disabled style="text-align: center; display: inline-block;margin-top: 5px">
+                                {% endif %}
+                                </div>
+                                <button type="submit" class="btn btn-default">登录</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default" data-dismiss="modal">关闭</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 col-md-offset-0">
+            <a  href="{{ url_for('authBlueprint.register') }}">
+                <button class="btn btn-primary btn-lg" >
+                    注册
+                </button>
+            </a>
+        </div>
+    {% endif %}
+{% endblock %}
+
+<script>
+    window.onload = function() {
+        let loginstatus = document.getElementById("loginButton");
+        loginstatus.onclick();
+    }
+</script>
