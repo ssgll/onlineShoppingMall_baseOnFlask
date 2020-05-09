@@ -10,6 +10,7 @@ class Config(object):
     PORT = 5000
     HOST = "127.0.0.1"
     BASE_DIR = os.getcwd()
+    FLASK_ENV = "development"
     TEMPLATE_FOLDER = os.path.join(BASE_DIR, "templates")
     STATIC_FOLDER = os.path.join(BASE_DIR, "static")
 
@@ -18,7 +19,7 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     PERMANENT_SESSION_LIFETIME = timedelta(minutes=1)
-    SECRET_KEY = "C&y199r^77*kEN7^"
+    SECRET_KEY = 'OsNI7p!$INtD^YiqcevM4clwF!8Ts@IK&FHRsQ515SfK4f6NEI!PC^^Nfcfe^Fre'
     SESSION_TYPE = "redis"
     redisPool = redis.ConnectionPool(host="127.0.0.1", port=6379, password="383687")
     SESSION_REDIS = redis.Redis(connection_pool=redisPool)

@@ -4,14 +4,11 @@
     <list default="true" id="b4faefb9-6220-461e-85f5-c2008d184a0e" name="Default Changelist" comment="2020-5-8 15:00 提交">
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/index.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/alembic.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/script.py.mako" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/e8b477c57237_.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/e8b477c57237_.py" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/versions/e22c99b46d7c_.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,8 +190,16 @@
       <workItem from="1588837467615" duration="11375000" />
       <workItem from="1588902428854" duration="5203000" />
       <workItem from="1588932679803" duration="9289000" />
-      <workItem from="1589007571788" duration="3032000" />
+      <workItem from="1589007571788" duration="4798000" />
     </task>
+    <task id="LOCAL-00001" summary="2020-5-8 16:00 删除迁移文件">
+      <created>1589011309165</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1589011309165</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +216,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2020-5-8 16:00 删除迁移文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="2020-5-8 16:00 删除迁移文件" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="635" y="333" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588942296932">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -220,10 +229,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1588937205640" />
-    <state x="572" y="121" key="CommitChangelistDialog2" timestamp="1589007780860">
+    <state x="572" y="121" key="CommitChangelistDialog2" timestamp="1589011359218">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="572" y="121" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1589007780860" />
+    <state x="572" y="121" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1589011359218" />
     <state x="748" y="282" key="FileChooserDialogImpl" timestamp="1588827472144">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

@@ -1,7 +1,7 @@
 #! coding:utf-8
-from flask import render_template, request, session, redirect, url_for, make_response
+from flask import render_template, request, session, redirect, url_for
 from app.validate import loginValidator
-from flask_login import login_required, logout_user, login_user
+from flask_login import login_required, logout_user, login_user, current_user
 from app.models import db, user
 
 
@@ -13,9 +13,10 @@ def indexView():
         # response = make_response("Success")
         # response.set_cookie("name", username, expires=datetime.now()+timedelta(hours=1))
         # cookie = request.cookies.get("name")
-        user_info = login_user(username)
         if not error:
             session["username"] = username
+            users = db.session.query(user).filter_by(username=username).first()
+            login_user(users)
             session["id"] = db.session.query(user).filter_by(username=username).one().userID
             return render_template(
                 "index.html",

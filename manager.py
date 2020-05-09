@@ -41,12 +41,12 @@ Session(app)
 # 登录设置
 loginManager = LoginManager()
 loginManager.init_app(app)
-loginManager.login_view = "indexBlueprint.indedx"
+loginManager.login_view = "indexBlueprint.index"
 
 
 @loginManager.user_loader  # 定义获取登录用户的方法
 def load_user(user_id):
-    return user.get_id(user_id)
+    return user.query.get(int(user_id))
 
 
 # 初始化命令行
