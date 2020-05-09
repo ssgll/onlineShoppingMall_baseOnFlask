@@ -1,8 +1,9 @@
 #! coding:utf-8
-from flask import render_template, request, session, redirect, url_for
+from flask import render_template, request, session, redirect, url_for, flash
 from app.validate import loginValidator
-from flask_login import login_required, logout_user, login_user, current_user
+from flask_login import login_required, logout_user, login_user
 from app.models import db, user
+from werkzeug.security import check_password_hash, generate_password_hash
 
 
 def indexView():
@@ -37,3 +38,19 @@ def logoutView():
     session.clear()
     logout_user()
     return redirect(url_for("indexBlueprint.index"))
+
+
+@login_required
+def passwordManager():
+    if request.method == "POST":
+        oldPasswordHash = db.session.query(user).filter_by(userID=session["id"]).first().password_hash
+        newPassword = request.form.get("newPassword")
+        oldPassword = request.form.get("oldPassword")
+        if check_password_hash(oldPasswordHash, oldPassword):
+            newPasswordHash = generate_password_hash(newPassword)
+            db.session.query(user).filter_by(userID=session["id"]).update({"password_hash": newPasswordHash})
+            db.session.commit()
+            flash("修改成功")
+        else:
+            flash("修改失败")
+    return render_template("passwordMnager.html")

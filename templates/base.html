@@ -7,9 +7,10 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    {% block css %}
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    {% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.icon') }}">
     {% block title %}
 
     {% endblock %}
@@ -54,10 +55,6 @@
 {% block search %}{% endblock %}
 {% block register %}{% endblock %}
 {% block usermanager %}{% endblock %}
+{% block passwordupdate %}{% endblock %}
 </body>
 </html>
-
-{% block js %}
-    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-{% endblock %}
