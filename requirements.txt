@@ -27,7 +27,7 @@ MarkupSafe==1.1.1
 mysql-connector==2.2.9
 mysql-connector-python==8.0.20
 Naked==0.1.31
-protobuf==3.11.3
+protobuf==3.15.0
 pycodestyle==2.5.0
 PyMySQL==0.9.3
 python-dateutil==2.8.1
