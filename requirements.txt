@@ -2,7 +2,7 @@ alembic==1.4.2
 APScheduler==3.6.3
 autopep8==1.5.2
 blinker==1.4
-certifi==2020.4.5.1
+certifi==2022.12.7
 chardet==3.0.4
 click==7.1.2
 crypto==1.4.1
